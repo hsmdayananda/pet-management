@@ -1,5 +1,6 @@
 package com.virtusa.petManagement.controller;
 
+import com.virtusa.petManagement.model.Employee;
 import com.virtusa.petManagement.model.Owner;
 import com.virtusa.petManagement.repository.OwnerRepository;
 import com.virtusa.petManagement.services.PetManagementService;
@@ -21,14 +22,12 @@ public class PetManagementController {
     @ResponseStatus(HttpStatus.OK)
     public void updateOwner(@RequestBody Owner owner){
 
-//       System.out.println(owner.toString());
-//        System.out.println("updateOwner()");
-      //  System.out.println(employee.getName());
 
-        //petManagementController.updateOwner(owner);
-       // ownerRepository.save(owner);
-        //System.out.println("petManagementService.save()");
-      petManagementService.save(owner);
+       // System.out.println(owner.getOwnerName());
+       // System.out.println(owner.getPetData().get(0).getName());
+        System.out.println(owner.toString());
+
+
     }
 
 

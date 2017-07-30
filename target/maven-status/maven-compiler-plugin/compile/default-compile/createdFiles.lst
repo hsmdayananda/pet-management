@@ -1,9 +1,0 @@
-com/virtusa/petManagement/services/PetManagementService_Impl.class
-com/virtusa/petManagement/model/Pet.class
-com/virtusa/petManagement/petManagement/config/PetConfig.class
-com/virtusa/petManagement/repository/OwnerRepository_Impl.class
-com/virtusa/Application.class
-com/virtusa/petManagement/model/Owner.class
-com/virtusa/petManagement/repository/OwnerRepository.class
-com/virtusa/petManagement/controller/PetManagementController.class
-com/virtusa/petManagement/services/PetManagementService.class

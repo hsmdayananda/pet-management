@@ -1,6 +1,8 @@
 package com.virtusa.petManagement.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ public class Owner implements Serializable{
     private String ownerCity;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "id")
+    @JsonProperty("petsInformation")
     private List<Pet> petData = new ArrayList<Pet>();
 
     public List<Pet> getPetData() {
@@ -38,7 +41,7 @@ public class Owner implements Serializable{
                 ", ownerName='" + ownerName + '\'' +
                 ", ownerMobile='" + ownerMobile + '\'' +
                 ", ownerCity='" + ownerCity + '\'' +
-                ", petData=" + petData +
+                ", petData=" + petData.toString() +
                 '}';
     }
 

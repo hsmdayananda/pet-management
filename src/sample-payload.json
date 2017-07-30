@@ -1,0 +1,15 @@
+{
+  "ownerName":"Krish",
+  "ownerMobile":"0714567000",
+  "ownerCity":"Kadawatha",
+  "petsInformation":[
+    {
+      "name":"Kesy",
+      "type":"dog"
+    },
+    {
+      "name":"Kitty",
+      "type":"cat"
+    }
+  ]
+}

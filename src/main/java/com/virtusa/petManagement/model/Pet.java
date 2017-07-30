@@ -20,7 +20,6 @@ public class Pet implements Serializable{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", owner=" + owner +
                 '}';
     }
 
