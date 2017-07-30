@@ -2,6 +2,7 @@ package com.virtusa.petManagement.model;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,8 +14,11 @@ import java.util.List;
 public class Owner implements Serializable{
 
     private static final long serialVersionUID = 1L;
+
+
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
     @Column(name="ownerName")
@@ -26,7 +30,7 @@ public class Owner implements Serializable{
     @Column(name="ownerCity")
     private String ownerCity;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "id")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "id")
     @JsonProperty("petsInformation")
     private List<Pet> petData = new ArrayList<Pet>();
 
@@ -45,12 +49,17 @@ public class Owner implements Serializable{
                 '}';
     }
 
+
     public void setPetData(List<Pet> petData) {
+
+
         for(Pet pet:petData){
             pet.setOwner(this);
+            System.out.println("pet " + petData);
         }
 
         this.petData = petData;
+        System.out.println("pet " + petData);
     }
 
 

@@ -4,14 +4,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "PET")
+@Table(name = "petsInformation")
 public class Pet implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="pet_id")
     private int id;
 
     @Override
@@ -31,11 +31,13 @@ public class Pet implements Serializable{
 
 
     @ManyToOne
+
     private Owner owner;
 
     public Owner getOwner() {
         return owner;
     }
+
 
     public void setOwner(Owner owner) {
         this.owner = owner;
